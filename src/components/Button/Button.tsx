@@ -1,10 +1,8 @@
-import React from "react";
-import type { ButtonHTMLAttributes, CSSProperties } from "react";
+import type { ButtonHTMLAttributes, CSSProperties, FC } from "react";
 import "./Button.css";
 
-// We define custom props that match your list exactly
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  fontFamily?: string; // <--- ADDED THIS
+  fontFamily?: string;
   fontSize?: string;
   fontWeight?: string | number;
   color?: string;
@@ -18,9 +16,9 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   hide?: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = ({
+export const Button: FC<ButtonProps> = ({
   children,
-  fontFamily, // <--- ADDED THIS
+  fontFamily,
   fontSize,
   fontWeight,
   color,
@@ -32,13 +30,13 @@ export const Button: React.FC<ButtonProps> = ({
   border,
   borderRadius,
   hide = false,
+  type = "button",
   className = "",
   style,
   ...props
 }) => {
-  // We map the React props to CSS Variables
-  const dynamicStyles: CSSProperties = {
-    "--btn-font-family": fontFamily, // <--- ADDED THIS
+  const dynamicStyles = {
+    "--btn-font-family": fontFamily,
     "--btn-font-size": fontSize,
     "--btn-font-weight": fontWeight,
     "--btn-color": color,
@@ -50,10 +48,11 @@ export const Button: React.FC<ButtonProps> = ({
     "--btn-radius": borderRadius,
     display: hide ? "none" : display,
     ...style
-  } as React.CSSProperties;
+  } as CSSProperties;
 
   return (
     <button
+      type={type}
       className={`custom-button ${className}`.trim()}
       style={dynamicStyles}
       {...props}
@@ -62,5 +61,3 @@ export const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
-
-export default Button;
