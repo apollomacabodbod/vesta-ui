@@ -12,6 +12,7 @@
     "./style.css": "./dist/style.css"
   },
   "files": [
+    "src",
     "dist"
   ],
   "sideEffects": [
