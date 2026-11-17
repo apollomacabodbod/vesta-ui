@@ -1,6 +1,6 @@
 {
   "name": "@freezecold/vesta-ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A React design system by Apollo Macabod.",
   "type": "module",
   "main": "./dist/index.js",
