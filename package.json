@@ -1,6 +1,7 @@
 {
-  "name": "vesta-ui",
+  "name": "@freezecold/vesta-ui",
   "version": "1.0.0",
+  "description": "A React design system by Apollo Macabod.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -13,18 +14,39 @@
     "./style.css": "./dist/style.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "!src/App.tsx",
+    "!src/App.css",
+    "!src/main.tsx",
+    "!src/assets",
+    "!src/**/*.test.tsx",
+    "!src/**/*.stories.tsx"
   ],
   "sideEffects": [
     "**/*.css"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR-USERNAME/vesta-ui.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.build.json && vite build",
     "prepare": "npm run build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
+  "keywords": [
+    "react",
+    "ui",
+    "design-system",
+    "components"
+  ],
+  "author": "Apollo Macabod",
+  "license": "MIT",
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
@@ -44,6 +66,18 @@
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.72.1",
     "vite": "^8.3.6",
-    "vite-plugin-dts": "^4.5.4"
+    "vite-plugin-dts": "^4.5.4",
+    "storybook": "^10.6.7",
+    "@storybook/react-vite": "^10.6.7",
+    "@chromatic-com/storybook": "latest",
+    "@storybook/addon-vitest": "^10.6.7",
+    "@storybook/addon-a11y": "^10.6.7",
+    "@storybook/addon-docs": "^10.6.7",
+    "@storybook/addon-mcp": "^10.6.7",
+    "eslint-plugin-storybook": "^10.6.7",
+    "vitest": "latest",
+    "@vitest/browser-playwright": "latest",
+    "@vitest/coverage-v8": "latest",
+    "playwright": "latest"
   }
 }
