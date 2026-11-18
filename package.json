@@ -15,13 +15,7 @@
   },
   "files": [
     "dist",
-    "src",
-    "!src/App.tsx",
-    "!src/App.css",
-    "!src/main.tsx",
-    "!src/assets",
-    "!src/stories",
-    "!src/**/*.test.tsx"
+    "src"
   ],
   "sideEffects": [
     "**/*.css"
